@@ -1,0 +1,183 @@
+.form-title {
+    margin: 35px;
+    color: var(--white-2);
+    font-size: var(--fs-1);
+}
+
+.form {
+    margin: 35px;
+}
+
+.input-wrapper {
+    margin-bottom: 35px;
+    display: flex;
+    gap: 25px;
+}
+
+.form-input {
+    color: var(--white-2);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-400);
+    padding: 13px 20px;
+    border: 1px solid var(--jet);
+    border-radius: 14px;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    transition: border-color 0.3s ease;
+}
+
+.text-area {
+    resize: vertical;
+    min-height: 120px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.form-input::placeholder {
+    font-weight: var(--fw-500);
+    color: var(--light-gray-70);
+}
+
+.form-input:focus {
+    border-color: var(--orange-yellow-crayola);
+}
+
+/* Button Styles */
+.form-btn {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    color: var(--orange-yellow-crayola);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 30px;
+    border-radius: 14px;
+    font-size: var(--fs-6);
+    text-transform: capitalize;
+    box-shadow: var(--shadow-3);
+    z-index: 1;
+    transition: var(--transition-1);
+    border: none;
+    margin-top: 10px;
+    margin-left: auto;
+    width: fit-content;
+    min-width: 180px;
+    cursor: pointer;
+}
+
+/* Button background effect */
+.form-btn::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+    transition: var(--transition-1);
+}
+
+/* HOVER EFFECT FOR ENABLED BUTTON */
+.form-btn:not(:disabled):hover {
+    background: var(--bg-gradient-yellow-1);
+    cursor: pointer;
+}
+
+.form-btn:not(:disabled):hover::before {
+    background: var(--bg-gradient-yellow-2);
+}
+
+/* Icon animation on hover when enabled */
+.form-btn:not(:disabled):hover svg {
+    transform: translateX(5px);
+}
+
+/* DISABLED STATE */
+.form-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+    pointer-events: all;
+}
+
+/* No hover effects when disabled */
+.form-btn:disabled:hover {
+    background: var(--border-gradient-onyx);
+    cursor: not-allowed !important;
+}
+
+.form-btn:disabled:hover::before {
+    background: var(--bg-gradient-jet);
+}
+
+.form-btn:disabled:hover svg {
+    transform: none;
+}
+
+/* Icon in button */
+.form-btn svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+/* Success Message */
+.success-message {
+    background: rgba(46, 204, 113, 0.1);
+    border: 1px solid #2ecc71;
+    color: #2ecc71;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Informational note */
+.mailto-note {
+    color: var(--light-gray-70);
+    font-size: var(--fs-7);
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid var(--orange-yellow-crayola);
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(-10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .input-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .form, .form-title {
+        margin: 20px;
+    }
+    
+    .form-btn {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+    }
+    
+    .mailto-note {
+        font-size: var(--fs-8);
+        padding: 8px;
+    }
+}

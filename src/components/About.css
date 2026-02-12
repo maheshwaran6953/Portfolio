@@ -1,0 +1,49 @@
+.about-content{
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
+    margin: 35px;
+}
+
+.services{
+    margin-bottom: 35px;
+}
+
+.service-list {
+    width: 95%;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    color: var(--white-2);
+}
+
+.service-item{
+    display: flex;
+    padding-top: 20px;
+    padding-left: 10px;
+    text-align: start;
+    margin-left: 35px;
+    gap: 20px;
+    border-radius: 20px;
+    background: #202022;
+    box-shadow: -1.5px  -1.5px 5px -4px white;
+}
+
+.service-title {
+    margin-bottom: 20px;
+    margin: 35px;
+    color: var(--white-2);
+}
+
+.service-name{
+    margin-bottom: 7px;
+}
+
+.service-text{
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-3);
+    line-height: 1.6;
+}
