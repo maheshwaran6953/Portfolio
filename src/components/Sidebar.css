@@ -270,6 +270,10 @@
 }
 
 .social-media ul li a{
+  color: var(--white-1);
+}
+
+.social-media ul li a:hover{
     color: var(--orange-yellow-crayola);
 }
 

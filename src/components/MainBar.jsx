@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { About } from './About';
 import { Resume } from './Resume';
 import { Projects } from './Projects';
-import { Skills } from './Skills';
 import { Contact } from './Contact';
 
 export function Mainbar(){
@@ -12,7 +11,6 @@ export function Mainbar(){
         { id: 'about', label: 'About', title: 'About Me' },
         { id: 'resume', label: 'Resume', title: 'My Resume' },
         { id: 'projects', label: 'Projects', title: 'My Projects' },
-        { id: 'skills', label: 'Skills', title: 'My Skills' },
         { id: 'contact', label: 'Contact', title: 'Get In Touch' }
     ];
     const currentTab = NavbarItems.find(item => item.label === activeTab) || NavbarItems[0];
@@ -21,7 +19,6 @@ export function Mainbar(){
             'About' : <About />,
             'Resume' : <Resume />,
             'Projects': <Projects />,
-            'Skills': <Skills />,
             'Contact': <Contact />
         };
         return content[activeTab] || <About />;
