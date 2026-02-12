@@ -114,7 +114,7 @@
 
 .place {
     color: var(--light-gray);
-    font-weight: var(--fw-4 00);
+    font-weight: var(--fw-400);
     font-size: var(--fs-5);
 }
 
