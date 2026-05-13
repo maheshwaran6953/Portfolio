@@ -1,26 +1,26 @@
 import DevelopmentIcon from '../assets/icon-dev.svg'
 import DesignIcon from '../assets/icon-design.svg'
-import { JavaIcon, DatabaseIcon } from './Icons';
+import { DatabaseIcon, BotIcon } from './Icons';
 
 export const ServicesData = [
     {
         icon : DevelopmentIcon,
-        title : 'Web development',
-        text : 'The most modern and high-quality design made at a professional level.'
+        title : 'Full-Stack Development',
+        text : 'High-performance web applications built with React, Angular, and Node.js, focusing on scalability and clean architecture.'
     },
     {
-        icon : DesignIcon,
-        title : 'Web design',
-        text : 'The most modern and high-quality design made at a professional level.'
-    },
-    {
-        icon : JavaIcon,
-        title : 'Java Development ',
-        text : 'Building enterprise-level applications, algorithms, and software solutions using Java and related technologies.'
+        icon : BotIcon,
+        title : 'AI & Intelligent Systems',
+        text : 'Integrating NLP, predictive scoring, and RAG-based chatbots to solve complex data retrieval and automation challenges.'
     },
     {
         icon : DatabaseIcon,
-        title : 'Database Architecture',
-        text : 'Designing efficient database schemas, optimizing queries, and managing data with MongoDB, SQL, and cloud databases.'
+        title : 'Database & API Design',
+        text : 'Architecting robust database schemas and secure RESTful APIs to handle high-concurrency systems and data integrity.'
+    },
+    {
+        icon : DesignIcon,
+        title : 'Automation & Optimization',
+        text : 'Streamlining workflows with automated testing and optimizing performance to ensure a seamless, professional user experience.'
     }
 ];

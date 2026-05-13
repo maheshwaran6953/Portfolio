@@ -10,6 +10,19 @@
     gap: 20px;
 }
 
+@media (min-width: 768px) {
+    .blog-posts-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .blog-posts-list {
+        gap: 30px;
+    }
+}
+
 .blog-post-item > a {
     position: relative;
     background: var(--border-gradient-onyx);

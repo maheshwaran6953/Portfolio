@@ -1,30 +1,43 @@
-/* MainBar.css — matches reference vCard navbar positioning */
+/* MainBar.css — Increased Padding and Font Sizes */
 
 .mainbar {
     background: var(--eerie-black-2);
     border: 1px solid var(--jet);
     border-radius: 20px;
     box-shadow: var(--shadow-1);
-    margin: 25px 25px 50px 0;
-    padding: 30px;
+    padding: 25px; /* Increased mobile padding */
     flex: 1;
-    overflow-y: auto;
     position: relative;
-    min-height: calc(100vh - 75px);
+    width: 100%;
 }
 
-/* Navbar — floats to top-right corner of mainbar */
+@media (min-width: 580px) {
+    .mainbar {
+        padding: 40px; /* Increased tablet padding */
+    }
+}
+
+@media (min-width: 1024px) {
+    .mainbar {
+        margin-bottom: 0;
+        min-height: calc(100vh - 120px);
+        padding: 45px; /* Increased desktop padding */
+    }
+}
+
+/* Navbar */
 .mainbar .navbar {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: hsla(240, 1%, 17%, 0.75);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: hsla(240, 1%, 17%, 0.95);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--jet);
-    border-radius: 0 20px 0 15px;
+    border-top: 1px solid var(--jet);
+    border-radius: 20px 20px 0 0;
     box-shadow: var(--shadow-2);
     z-index: 5;
+    padding: 5px 10px;
 }
 
 .navbar-list {
@@ -32,22 +45,24 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding: 0 30px;
-    gap: 15px;
-}
-
-.navbar-item {
-    list-style: none;
+    padding: 0 5px;
+    gap: 5px;
 }
 
 .navbar-link {
     color: var(--light-gray-70);
-    font-size: var(--fs-3);
-    padding: 20px 10px;
+    font-size: var(--fs-6); /* Increased mobile font size */
+    padding: 15px 10px;
     font-weight: var(--fw-500);
     transition: color var(--transition-1);
     text-align: center;
-    white-space: nowrap;
+}
+
+@media (min-width: 580px) {
+    .navbar-link {
+        padding: 20px 15px;
+        font-size: var(--fs-4); /* Increased tablet font size */
+    }
 }
 
 .navbar-link:hover,
@@ -59,7 +74,34 @@
     color: var(--orange-yellow-crayola);
 }
 
-/* Content area inside mainbar — needs top padding to not go under navbar */
+/* Desktop Navbar */
+@media (min-width: 1024px) {
+    .mainbar .navbar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: auto;
+        left: auto;
+        width: max-content;
+        border: 1px solid var(--jet);
+        border-radius: 0 20px 0 20px;
+        padding: 0 30px;
+    }
+    
+    .navbar-link {
+        font-size: var(--fs-5); /* Increased desktop font size */
+        padding: 20px 15px;
+    }
+}
+
+/* Content area inside mainbar */
 .mainbar-content {
-    padding-top: 10px;
+    margin-bottom: 80px; /* Space for bottom navbar */
+}
+
+@media (min-width: 1024px) {
+    .mainbar-content {
+        margin-bottom: 0;
+        padding-top: 25px;
+    }
 }

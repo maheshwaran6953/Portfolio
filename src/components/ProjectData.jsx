@@ -12,7 +12,8 @@ export const Project = [
         description: "An enterprise-grade, event-driven B2B liquidity platform using AI risk-scoring and Virtual Account (VAN) orchestration.",
         category: "FinTech",
         image: vanguardImg,
-        link: "https://github.com/maheshwaran6953/vanguard-settlement-engine",
+        githubLink: "https://github.com/maheshwaran6953/vanguard-settlement-engine",
+        liveLink: "#",
         tech: ["Python", "Node.js", "AI", "B2B"]
     },
     {
@@ -21,7 +22,8 @@ export const Project = [
         description: "Full-stack ITSM Helpdesk Ticketing System for efficient issue tracking and resolution.",
         category: "Full Stack",
         image: helpdeskImg,
-        link: "https://github.com/maheshwaran6953/smart-helpdesk-ticketing",
+        githubLink: "https://github.com/maheshwaran6953/smart-helpdesk-ticketing",
+        liveLink: "#",
         tech: ["React", "Node.js", "MongoDB", "Express"]
     },
     {
@@ -30,7 +32,8 @@ export const Project = [
         description: "AI-powered mood-adaptive task management app that organizes your day based on your emotions.",
         category: "Full Stack",
         image: todomoodImg,
-        link: "https://github.com/maheshwaran6953/todomood",
+        githubLink: "https://github.com/maheshwaran6953/todomood",
+        liveLink: "#",
         tech: ["React", "AI", "Local Storage"]
     },
     {
@@ -39,7 +42,8 @@ export const Project = [
         description: "A fully functional e-commerce platform clone with cart and payment integration.",
         category: "Web Development",
         image: amazonImg,
-        link: "https://github.com/maheshwaran6953/Amazon-project",
+        githubLink: "https://github.com/maheshwaran6953/Amazon-project",
+        liveLink: "#",
         tech: ["HTML", "CSS", "JavaScript"]
     },
     {
@@ -48,7 +52,8 @@ export const Project = [
         description: "AI-powered Document Q&A chatbot using Endee vector database for highly accurate information retrieval.",
         category: "Applications",
         image: ragbotImg,
-        link: "https://github.com/maheshwaran6953/rag-chatbot-endee",
+        githubLink: "https://github.com/maheshwaran6953/rag-chatbot-endee",
+        liveLink: "#",
         tech: ["Python", "AI", "Vector DB", "RAG"]
     }
 ];

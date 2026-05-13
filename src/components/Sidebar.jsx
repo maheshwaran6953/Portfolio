@@ -1,11 +1,13 @@
 import './Sidebar.css'
 import MyAvatar from '../assets/my-avatar.png'
 import { useState } from 'react';
-import { EmailIcon, PhoneIcon, CalendarIcon, LocationIcon,          GitHubIcon, LinkedInIcon, InstagramIcon, LeetCodeIcon } from './Icons';
+import { EmailIcon, PhoneIcon, CalendarIcon, LocationIcon, GitHubIcon, LinkedInIcon, InstagramIcon, LeetCodeIcon, ChevronDown } from './Icons';
 
 export function Sidebar(){
     const name = "Maheshwaran P";
     const [hoveredLetter, setHoveredLetter] = useState(null);
+    const [isExpanded, setIsExpanded] = useState(false);
+
     const ContactInfo = [
         {
             type: 'email',
@@ -58,17 +60,13 @@ export function Sidebar(){
             icon: LeetCodeIcon
         }
     ];
+
     return(
-        <div className='sidebar'>
+        <div className={`sidebar ${isExpanded ? 'active' : ''}`}>
             <div className="sidebar-info">
-
-                {/* avatar */}
-
                 <figure className='avatar-image'>
                     <img src={MyAvatar} alt="my-avatar" />
                 </figure>
-
-                {/* details */}
 
                 <div className="info-content">
                     <h1 className="animated-name" >{name.split('').map((letter, index) => (
@@ -83,49 +81,71 @@ export function Sidebar(){
                         </span>
                     ))}</h1>
                     <p className="title">Full Stack Developer</p>
+                    
+                    <div className="cv-btn-container">
+                        <a 
+                            href="https://drive.google.com/file/d/1KQ7vSK2Z_mJ1zvigFlBgpjLwhyZXLqwJ/view?usp=sharing" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="download-cv-btn"
+                        >
+                            Download CV
+                        </a>
+                    </div>
                 </div>
+
+                <button className="info_more-btn" onClick={() => setIsExpanded(!isExpanded)}>
+                    <span>Show Contacts</span>
+                    <ChevronDown size={16} color="var(--orange-yellow-crayola)" />
+                </button>
+            </div>
+
+            <div className="sidebar-info_more">
                 <div className="seperator"></div>
-            </div>
-            <div className="contact-info">
-                <ul>
-                    {ContactInfo.map((item, index) => (
-                        <li className={item.type} key={index}>
-                            <div className="contact-logo">
-                                <item.icon />
-                            </div>
-                            <div className="contact-detail">
-                                <p className='contact-title'>{item.title}</p>
-                                {item.link ? (
-                                    <a href={item.link} rel="noopener noreferrer" data-full-email={item.content}
-                                    title={item.content}>
-                                    {item.type === 'email' ?
-                                        `${item.content.substring(0, 15)}...` :
-                                        item.content
+
+                <div className="contact-info">
+                    <ul className="contact-list">
+                        {ContactInfo.map((item, index) => (
+                            <li className="contact-item" key={index}>
+                                <div className="contact-logo">
+                                    <item.icon />
+                                </div>
+                                <div className="contact-detail">
+                                    <p className='contact-title'>{item.title}</p>
+                                    {item.link ? (
+                                        <a href={item.link} rel="noopener noreferrer" className="contact-link">
+                                            {item.type === 'email' ?
+                                                (item.content.length > 20 ? `${item.content.substring(0, 18)}...` : item.content) :
+                                                item.content
+                                            }
+                                        </a>
+                                    ):
+                                    item.dateTime ? (
+                                        <time dateTime={item.dateTime}>{item.content}</time>
+                                    ):
+                                    (
+                                        <address>{item.content}</address>
+                                    )
                                     }
-                                    </a>
-                                ):
-                                item.dateTime ? (
-                                    <time dateTime={item.dateTime}>{item.content}</time>
-                                ):
-                                (
-                                    <address>{item.content}</address>
-                                )
-                                }
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <div className="social-media">
-                <ul className='socila-list'>
-                    {SocialLinks.map((social, index) => (
-                        <li className="social-item"key={index} >
-                            <a href={social.url} target='_blank'  rel="noopener noreferrer">
-                                <social.icon />
-                            </a>
-                        </li>
-                    ))}
-                </ul>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div className="seperator"></div>
+
+                <div className="social-media">
+                    <ul className='socila-list'>
+                        {SocialLinks.map((social, index) => (
+                            <li className="social-item" key={index} >
+                                <a href={social.url} target='_blank'  rel="noopener noreferrer">
+                                    <social.icon />
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
         </div>
     );

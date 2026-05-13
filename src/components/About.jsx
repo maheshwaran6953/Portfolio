@@ -10,17 +10,17 @@ export function About(){
 
             <section className="about-text">
                 <p>
-                    I'm a Full-Stack Developer and UI/UX Enthusiast from Tamil Nadu, India,
-                    specializing in building scalable and user-friendly web applications. I enjoy
-                    turning complex problems into simple, efficient, and intuitive solutions.
+                    I'm a motivated <strong>Full-Stack Developer</strong> and B.Tech IT student from Tamil Nadu, India, 
+                    with hands-on experience in building enterprise-grade web applications. I specialize 
+                    in turning complex requirements into scalable, high-performance solutions with a 
+                    strong focus on clean architecture and user-centric design.
                 </p>
                 <p>
-                    My job is to design and develop applications that are not only functional and
-                    reproducible but also visually appealing and easy to use. I add a personal touch
-                    to every project, ensuring clarity, performance, and a seamless user experience.
-                    My aim is to bring your ideas to life in the most practical and creative way.
-                    I've built and optimized projects ranging from task management apps to
-                    interactive platforms.
+                    My experience ranges from developing an AI-powered helpdesk for Smart India Hackathon 2025 
+                    to delivering a live college task management platform handling <strong>1000+ users</strong>. 
+                    Whether it's architecting complex backend systems with Node.js and MongoDB or crafting 
+                    dynamic frontends with React and Angular, I bring a personal touch to every project, 
+                    ensuring performance and seamless user experiences.
                 </p>
             </section>
 
@@ -32,8 +32,8 @@ export function About(){
                         return (
                             <li className="service-item" key={index}>
                                 <div className="service-icon-box">
-                                    {typeof IconComponent === 'function' ? (
-                                        <IconComponent size={40} />
+                                    {typeof IconComponent === 'function' || (typeof IconComponent === 'object' && IconComponent !== null) ? (
+                                        <IconComponent size={40} strokeWidth={1.5} color="var(--orange-yellow-crayola)" />
                                     ) : (
                                         <img src={IconComponent} alt={service.title} width="40" />
                                     )}
