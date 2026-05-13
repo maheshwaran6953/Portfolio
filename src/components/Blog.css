@@ -1,0 +1,134 @@
+/* Blog styles — ported from reference style.css */
+
+.blog-posts {
+    margin-bottom: 10px;
+}
+
+.blog-posts-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.blog-post-item > a {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    height: 100%;
+    box-shadow: var(--shadow-4);
+    border-radius: 16px;
+    z-index: 1;
+}
+
+.blog-post-item > a::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    background: var(--eerie-black-1);
+    z-index: -1;
+}
+
+.blog-banner-box {
+    width: 100%;
+    height: 200px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.blog-banner-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-1);
+}
+
+.blog-post-item > a:hover .blog-banner-box img {
+    transform: scale(1.1);
+}
+
+.blog-content {
+    padding: 15px;
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 10px;
+}
+
+.blog-meta .blog-category,
+.blog-meta time {
+    color: var(--light-gray-70);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+}
+
+.blog-meta .dot {
+    background: var(--light-gray-70);
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.blog-item-title {
+    margin-bottom: 10px;
+    line-height: 1.3;
+    transition: var(--transition-1);
+}
+
+.blog-post-item > a:hover .blog-item-title {
+    color: var(--orange-yellow-crayola);
+}
+
+.blog-text {
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
+}
+
+/* Coming Soon placeholder */
+.blog-coming-soon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    gap: 15px;
+    background: var(--border-gradient-onyx);
+    border-radius: 16px;
+    border: 1px solid var(--jet);
+    position: relative;
+    z-index: 1;
+}
+
+.blog-coming-soon::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    background: var(--bg-gradient-jet);
+    z-index: -1;
+}
+
+.blog-coming-soon-icon {
+    font-size: 48px;
+    line-height: 1;
+}
+
+.blog-coming-soon h3 {
+    color: var(--white-2);
+    font-size: var(--fs-2);
+}
+
+.blog-coming-soon p {
+    color: var(--light-gray);
+    font-size: var(--fs-6);
+    font-weight: var(--fw-300);
+    line-height: 1.6;
+    max-width: 400px;
+}

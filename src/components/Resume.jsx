@@ -4,7 +4,11 @@ import { ResumeSkills } from './ResumeSkills';
 
 export function Resume(){
     return(
-        <div className="resume">
+        <article className="resume active" data-page="resume">
+            <header>
+                <h1 className="h2 article-title">Resume</h1>
+            </header>
+
             <div className="education">
                 <div className="heading">
                     <div className="icon">
@@ -59,6 +63,6 @@ export function Resume(){
             <div className="resume-skill">
                 <ResumeSkills />
             </div>
-        </div>
+        </article>
     );
 }

@@ -1,40 +1,54 @@
-// projectData.js
-import amazonImg from '../assets/Amazon.png';
-import Todo from '../assets/Todo.png';
-import aiVoiceDetectorImg from '../assets/Api.png';
-import StonePaperScissor from '../assets/StonePaperScissor.png';
+// ProjectData.jsx
+import vanguardImg from '../assets/project_vanguard.png';
+import helpdeskImg from '../assets/project_helpdesk.png';
+import todomoodImg from '../assets/project_todomood.png';
+import amazonImg from '../assets/project_amazon.png';
+import ragbotImg from '../assets/project_ragbot.png';
 
-export const Project     = [
+export const Project = [
     {
         id: 1,
-        title: "Amazon Clone",
-        description: "A fully functional e-commerce platform with cart and payment integration",
-        image: amazonImg,
-        link: "https://amazon-project.com",
-        tech: ["React", "Node.js", "MongoDB", "Stripe"]
+        title: "Vanguard Settlement Engine",
+        description: "An enterprise-grade, event-driven B2B liquidity platform using AI risk-scoring and Virtual Account (VAN) orchestration.",
+        category: "FinTech",
+        image: vanguardImg,
+        link: "https://github.com/maheshwaran6953/vanguard-settlement-engine",
+        tech: ["Python", "Node.js", "AI", "B2B"]
     },
     {
         id: 2,
-        title: "Todo Application",
-        description: "A clean and intuitive todo list app that helps users organize daily tasks. Features include add, edit, delete, and mark complete - all persisted in browser's local storage.",
-        image: Todo,
-        link: "https://maheshwaran6953.github.io/TODO_PROJECT/index.html",
-        tech: ["JavaScript", "CSS3", "HTML5"]
+        title: "Smart Helpdesk Ticketing",
+        description: "Full-stack ITSM Helpdesk Ticketing System for efficient issue tracking and resolution.",
+        category: "Full Stack",
+        image: helpdeskImg,
+        link: "https://github.com/maheshwaran6953/smart-helpdesk-ticketing",
+        tech: ["React", "Node.js", "MongoDB", "Express"]
     },
     {
         id: 3,
-        title: "AI Voice Detector",
-        description: "A Python-based API that analyzes audio files to determine whether a voice recording is human or AI-generated. Built with machine learning techniques to detect synthetic speech patterns.",
-        image: aiVoiceDetectorImg,
-        link: "https://github.com/maheshwaran6953/voice-detection-hackathon",
-        tech: ["Python", "Flask/FastAPI", "Machine Learning", "Librosa", "Audio Processing"]
+        title: "TodoMood",
+        description: "AI-powered mood-adaptive task management app that organizes your day based on your emotions.",
+        category: "Full Stack",
+        image: todomoodImg,
+        link: "https://github.com/maheshwaran6953/todomood",
+        tech: ["React", "AI", "Local Storage"]
     },
     {
         id: 4,
-        title: "Stone Paper Scissors",
-        description: "Classic hand game built with vanilla JavaScript. Play against the computer with real-time score tracking and persistent leaderboard using local storage.",
-        image: StonePaperScissor,
-        link: "https://maheshwaran6953.github.io/stone-paper-scissors/",
-        tech: ["JavaScript", "HTML5", "CSS3", "Local Storage"]
+        title: "Amazon Project",
+        description: "A fully functional e-commerce platform clone with cart and payment integration.",
+        category: "Web Development",
+        image: amazonImg,
+        link: "https://github.com/maheshwaran6953/Amazon-project",
+        tech: ["HTML", "CSS", "JavaScript"]
+    },
+    {
+        id: 5,
+        title: "RAG Chatbot Endee",
+        description: "AI-powered Document Q&A chatbot using Endee vector database for highly accurate information retrieval.",
+        category: "Applications",
+        image: ragbotImg,
+        link: "https://github.com/maheshwaran6953/rag-chatbot-endee",
+        tech: ["Python", "AI", "Vector DB", "RAG"]
     }
 ];

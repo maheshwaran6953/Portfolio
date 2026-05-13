@@ -1,49 +1,73 @@
-.about-content{
+/* About styles — aligned with reference vCard style.css */
+
+/* About text */
+.about-text {
     color: var(--light-gray);
-    font-size: var(--fs-6);
-    font-weight: var(--fw-300);
+    font-size: var(--fs-4);
+    font-weight: var(--fw-400);
     line-height: 1.6;
-    margin: 35px;
 }
 
-.services{
+.about-text p {
+    margin-bottom: 15px;
+}
+
+/* Service section */
+.service {
     margin-bottom: 35px;
-}
-
-.service-list {
-    width: 95%;
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    color: var(--white-2);
-}
-
-.service-item{
-    display: flex;
-    padding-top: 20px;
-    padding-left: 10px;
-    text-align: start;
-    margin-left: 35px;
-    gap: 20px;
-    border-radius: 20px;
-    background: #202022;
-    box-shadow: -1.5px  -1.5px 5px -4px white;
 }
 
 .service-title {
     margin-bottom: 20px;
-    margin: 35px;
-    color: var(--white-2);
 }
 
-.service-name{
+.service-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.service-item {
+    position: relative;
+    background: var(--border-gradient-onyx);
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: var(--shadow-2);
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    z-index: 1;
+}
+
+.service-item::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+}
+
+.service-icon-box {
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.service-icon-box img {
+    display: block;
+}
+
+.service-content-box {
+    text-align: left;
+}
+
+.service-item-title {
     margin-bottom: 7px;
 }
 
-.service-text{
+.service-item-text {
     color: var(--light-gray);
     font-size: var(--fs-6);
-    font-weight: var(--fw-3);
+    font-weight: var(--fw-300);
     line-height: 1.6;
 }

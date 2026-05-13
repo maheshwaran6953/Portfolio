@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { About } from './About';
 import { Resume } from './Resume';
 import { Projects } from './Projects';
+import { Blog } from './Blog';
 import { Contact } from './Contact';
 
 export function Mainbar(){
@@ -11,6 +12,7 @@ export function Mainbar(){
         { id: 'about', label: 'About', title: 'About Me' },
         { id: 'resume', label: 'Resume', title: 'My Resume' },
         { id: 'projects', label: 'Projects', title: 'My Projects' },
+        { id: 'blog', label: 'Blog', title: 'My Blog' },
         { id: 'contact', label: 'Contact', title: 'Get In Touch' }
     ];
     const currentTab = NavbarItems.find(item => item.label === activeTab) || NavbarItems[0];
@@ -19,6 +21,7 @@ export function Mainbar(){
             'About' : <About />,
             'Resume' : <Resume />,
             'Projects': <Projects />,
+            'Blog': <Blog />,
             'Contact': <Contact />
         };
         return content[activeTab] || <About />;
@@ -26,24 +29,21 @@ export function Mainbar(){
     return(
         <div className="mainbar">
             <nav className="navbar">
-                <ul className="nav-list">
+                <ul className="navbar-list">
                     {NavbarItems.map((item) => (
-                        <li className={`nav-item ${item.id} ${activeTab === item.label ? 'active' : ''}`} key={item.id}>
-                            <button className={`navbar-link ${activeTab === item.label ? 'active' :'' }`} onClick={()=> setActiveTab(item.label)} >{item.label}</button>
+                        <li className="navbar-item" key={item.id}>
+                            <button
+                                className={`navbar-link ${activeTab === item.label ? 'active' : ''}`}
+                                onClick={() => setActiveTab(item.label)}
+                            >
+                                {item.label}
+                            </button>
                         </li>
                     ))}
                 </ul>
             </nav>
-            <div className="page-title-section">
-                <div className="container">
-                    <h1 className="page-title">{currentTab.title}</h1>
-                    <span className="underline"></span>
-                </div>
-            </div>
             <div className="mainbar-content">
-                {
-                    RenderContent()
-                }
+                {RenderContent()}
             </div>
         </div>
     );
