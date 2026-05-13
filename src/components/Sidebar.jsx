@@ -1,5 +1,5 @@
 import './Sidebar.css'
-import MyAvatar from '../assets/my-avatar.png'
+import MyAvatar from '../assets/avatar-professional.png'
 import { useState } from 'react';
 import { EmailIcon, PhoneIcon, CalendarIcon, LocationIcon, GitHubIcon, LinkedInIcon, InstagramIcon, LeetCodeIcon, ChevronDown } from './Icons';
 
