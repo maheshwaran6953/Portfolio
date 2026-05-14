@@ -23,16 +23,19 @@
     }
 }
 
-.blog-post-item > a {
+.blog-post-item button {
+    width: 100%;
     position: relative;
     background: var(--border-gradient-onyx);
     height: 100%;
     box-shadow: var(--shadow-4);
     border-radius: 16px;
     z-index: 1;
+    padding: 0;
+    text-align: left;
 }
 
-.blog-post-item > a::before {
+.blog-post-item button::before {
     content: "";
     position: absolute;
     inset: 1px;
@@ -55,7 +58,7 @@
     transition: var(--transition-1);
 }
 
-.blog-post-item > a:hover .blog-banner-box img {
+.blog-post-item button:hover .blog-banner-box img {
     transform: scale(1.1);
 }
 
@@ -92,7 +95,7 @@
     transition: var(--transition-1);
 }
 
-.blog-post-item > a:hover .blog-item-title {
+.blog-post-item button:hover .blog-item-title {
     color: var(--orange-yellow-crayola);
 }
 
@@ -103,45 +106,143 @@
     line-height: 1.6;
 }
 
-/* Coming Soon placeholder */
-.blog-coming-soon {
+/* Blog Post Detail */
+.blog-post-detail {
+    animation: fadeSlideUp 0.5s ease forwards;
+}
+
+.back-btn {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    text-align: center;
-    gap: 15px;
-    background: var(--border-gradient-onyx);
-    border-radius: 16px;
-    border: 1px solid var(--jet);
-    position: relative;
-    z-index: 1;
-}
-
-.blog-coming-soon::before {
-    content: "";
-    position: absolute;
-    inset: 1px;
-    border-radius: inherit;
-    background: var(--bg-gradient-jet);
-    z-index: -1;
-}
-
-.blog-coming-soon-icon {
-    font-size: 48px;
-    line-height: 1;
-}
-
-.blog-coming-soon h3 {
-    color: var(--white-2);
-    font-size: var(--fs-2);
-}
-
-.blog-coming-soon p {
-    color: var(--light-gray);
+    gap: 8px;
+    color: var(--orange-yellow-crayola);
     font-size: var(--fs-6);
+    margin-bottom: 20px;
+    transition: var(--transition-1);
+}
+
+.back-btn:hover {
+    color: var(--vegas-gold);
+    transform: translateX(-5px);
+}
+
+.blog-detail-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    color: var(--light-gray-70);
+    font-size: var(--fs-6);
+}
+
+.blog-detail-meta .dot {
+    background: var(--light-gray-70);
+    width: 4px;
+    height: 4px;
+    border-radius: 4px;
+}
+
+.blog-detail-banner {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-2);
+}
+
+.blog-detail-banner img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.blog-detail-content {
+    color: var(--light-gray);
+    line-height: 1.8;
+}
+
+.blog-content-heading {
+    margin-top: 35px;
+    margin-bottom: 15px;
+    color: var(--white-2);
+}
+
+.blog-content-text {
+    margin-bottom: 20px;
+    font-size: var(--fs-5);
     font-weight: var(--fw-300);
-    line-height: 1.6;
-    max-width: 400px;
+}
+
+.blog-content-text strong {
+    color: var(--white-1);
+    font-weight: var(--fw-600);
+}
+
+.blog-content-text code {
+    background: var(--onyx);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+    color: var(--orange-yellow-crayola);
+}
+
+.blog-content-list {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.blog-content-list li {
+    list-style: disc;
+    margin-bottom: 10px;
+    color: var(--light-gray);
+    font-size: var(--fs-5);
+}
+
+.blog-content-code-wrapper {
+    margin: 25px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1e1e1e;
+    border: 1px solid var(--jet);
+    box-shadow: var(--shadow-3);
+}
+
+.code-header {
+    background: var(--onyx);
+    padding: 8px 15px;
+    font-size: var(--fs-7);
+    color: var(--light-gray-70);
+    border-bottom: 1px solid var(--jet);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.blog-content-code {
+    padding: 20px;
+    overflow-x: auto;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: var(--fs-6);
+    line-height: 1.5;
+    color: #d4d4d4;
+}
+
+.blog-content-code code {
+    white-space: pre;
+}
+
+/* Scrollbar for code blocks */
+.blog-content-code::-webkit-scrollbar {
+    display: block;
+    height: 6px;
+}
+
+.blog-content-code::-webkit-scrollbar-thumb {
+    background: var(--jet);
+    border-radius: 10px;
+}
+
+.blog-content-code::-webkit-scrollbar-track {
+    background: transparent;
 }
